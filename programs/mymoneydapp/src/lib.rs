@@ -42,42 +42,58 @@ pub enum AuthorityType {
 #[derive(Accounts)]
 pub struct ProxyTransfer<'info> {
     #[account(signer)]
+    /// CHECK:
     pub authority: AccountInfo<'info>,
     #[account(mut)]
+    /// CHECK:
     pub from: AccountInfo<'info>,
     #[account(mut)]
+    /// CHECK:
     pub to: AccountInfo<'info>,
+    /// CHECK:
     pub token_program: AccountInfo<'info>,
 }
 
 #[derive(Accounts)]
 pub struct ProxyMintTo<'info> {
     #[account(signer)]
+    /// CHECK:
     pub authority: AccountInfo<'info>,
     #[account(mut)]
+    /// CHECK:
     pub mint: AccountInfo<'info>,
     #[account(mut)]
+    /// CHECK:
     pub to: AccountInfo<'info>,
+    /// CHECK:
     pub token_program: AccountInfo<'info>,
 }
 
 #[derive(Accounts)]
 pub struct ProxyBurn<'info> {
     #[account(signer)]
+    /// CHECK:
     pub authority: AccountInfo<'info>,
     #[account(mut)]
+    /// CHECK:
     pub mint: AccountInfo<'info>,
     #[account(mut)]
+    /// CHECK:
     pub from: AccountInfo<'info>,
+    /// CHECK:
     pub token_program: AccountInfo<'info>,
 }
 
 #[derive(Accounts)]
+/// CHECK:
 pub struct ProxySetAuthority<'info> {
     #[account(signer)]
+    /// CHECK:
     pub current_authority: AccountInfo<'info>,
     #[account(mut)]
+    /// CHECK:
     pub account_or_mint: AccountInfo<'info>,
+    /// CHECK:
     pub token_program: AccountInfo<'info>,
 }
 
